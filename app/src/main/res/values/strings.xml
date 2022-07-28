@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ShimmerTextView</string>
+    <string name="text_mi">Mindinventory</string>
+    <string name="text_offer_title">Save up to 5$</string>
+    <string name="text_offer_subtitle">* Minimum order value 20$</string>
+    <string name="text_friday">FantasticFriday</string>
+    <string name="text_bogo">Buy 1 Get 1 Free</string>
+    <string name="text_buy_4">Buy any 4 Sandwiches</string>
+    <string name="text_get_1">Get 1 Sandwich Free!</string>
+    <string name="text_50_percent">50% OFF Up to 3$</string>
+    <string name="text_free_cheesy_garlic_bread">Free Cheesy Garlic Bread</string>
+
+    <string name="text_buy_nine_coffees">Buy nine coffees and get one free, purchase every beer on the list and get 10% off beers for the year.</string>
+    <string name="text_apply_happy_friday">Apply HappyFriday and get 1 Free Coffee</string>
+    <string name="text_10_percent">10% Discount on Beverages</string>
+    <string name="text_discount_salty">Discount salty =pretzels that’ll inspire someone to buy beers.</string>
+    <string name="text_happy_hour">Thursday happy hour</string>
+    <string name="text_get_free_delivery">Get Free Delivery on 2 Order</string>
+</resources>
