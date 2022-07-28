@@ -15,9 +15,37 @@ ShimmerTextView is a simple library to integrate shimmer effect in your TextView
 * Set ShimmerTextView shape(Linear/Radial)
 
 # Usage
-
+# Usage
 **Dependencies**
-> Insert gradle dependency here.
+- **Step 1: Add the JitPack repository in your project build.gradle file**
+```bash
+allprojects {
+	    repositories {
+		    ...
+		    maven { url 'https://jitpack.io' }
+	    }
+    }
+```
+
+ **or**
+    
+If Android studio version is Arctic Fox or upper then add it in your settings.gradle:
+```bash
+ dependencyResolutionManagement {
+    		repositories {
+        		...
+        		maven { url 'https://jitpack.io' }
+    		}
+	   }
+```
+
+- **Step 2: Add the dependency in your app module build.gradle file**
+```bash
+dependencies {
+		    ...
+	        implementation 'com.github.Mindinventory:ShimmerTextView:x.x.x'
+	}
+```
 
 **Implementation**
 
