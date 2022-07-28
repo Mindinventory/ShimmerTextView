@@ -1,4 +1,4 @@
-ShimmerTextView
+ShimmerTextView [![](https://jitpack.io/v/Mindinventory/ShimmerTextView.svg)](https://jitpack.io/#Mindinventory/ShimmerTextView) ![](https://img.shields.io/github/languages/top/Mindinventory/ShimmerTextView) ![](https://img.shields.io/github/license/mindinventory/ShimmerTextView)
 ====
 
 ShimmerTextView is a simple library to integrate shimmer effect in your TextView.
