@@ -280,7 +280,7 @@ class Shimmer {
             return getThis()
         }
 
-        fun clamp(min: Float, max: Float, value: Float): Float {
+        private fun clamp(min: Float, max: Float, value: Float): Float {
             return max.coerceAtMost(min.coerceAtLeast(value))
         }
 

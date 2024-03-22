@@ -86,13 +86,13 @@ dependencies {
 
 **XML Properties**
 
-| Properties             | Description                               |
-|------------------------|-------------------------------------------|
-|shimmer_base_color      |Set base color of ShimmerTextView          |
-|Shimmer_highlight_color |Set highlight color of shimmer animation   |
-|shimmer_colored         |Set it to true for colored ShimmerTextView |
-|shimmer_duration        |Set duration for animation                 |
-|shimmer_direction       |Set animation direction(left_to_right,top_to_bottom, right_to_left, bottom_to_top)|
+| Properties              | Description                                                                        |
+|-------------------------|------------------------------------------------------------------------------------|
+| shimmer_base_color      | Set base color of ShimmerTextView                                                  |
+| Shimmer_highlight_color | Set highlight color of shimmer animation                                           |
+| shimmer_colored         | Set it to true for colored ShimmerTextView                                         |
+| shimmer_duration        | Set duration for animation                                                         |
+| shimmer_direction       | Set animation direction(left_to_right,top_to_bottom, right_to_left, bottom_to_top) |
 
 That's it 👍 and you're good to go 🚀
 

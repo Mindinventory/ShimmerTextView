@@ -1,12 +1,19 @@
 package com.app.shimmertextview
 
 import android.animation.ValueAnimator
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.ColorFilter
+import android.graphics.LinearGradient
+import android.graphics.Matrix
+import android.graphics.Paint
+import android.graphics.PixelFormat
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffXfermode
+import android.graphics.RadialGradient
+import android.graphics.Rect
+import android.graphics.Shader
 import android.graphics.drawable.Drawable
 import android.view.animation.LinearInterpolator
-import androidx.annotation.FloatRange
-import androidx.annotation.Nullable
-import androidx.annotation.Px
 import kotlin.math.sqrt
 import kotlin.math.tan
 
@@ -16,7 +23,6 @@ class ShimmerDrawable : Drawable() {
     private val rect = Rect()
     private val shaderMatrix = Matrix()
 
-    @Nullable
     private var valueAnimator: ValueAnimator? = null
     private var staticAnimationProgress = -1F
 
@@ -30,7 +36,7 @@ class ShimmerDrawable : Drawable() {
         invalidateSelf()
     }
 
-    fun setShimmer(@Nullable shimmer: Shimmer) {
+    fun setShimmer(shimmer: Shimmer) {
         this.shimmer = shimmer
         if (this.shimmer != null) {
             shimmerPaint.xfermode =
@@ -42,7 +48,6 @@ class ShimmerDrawable : Drawable() {
     }
 
 
-    @Nullable
     fun getShimmer(): Shimmer? {
         return shimmer
     }
@@ -67,13 +72,11 @@ class ShimmerDrawable : Drawable() {
         return valueAnimator != null && valueAnimator?.isRunning == true
     }
 
-    override fun onBoundsChange(bounds: Rect?) {
+    override fun onBoundsChange(bounds: Rect) {
         super.onBoundsChange(bounds)
-        bounds?.let {
-            rect.set(it)
-            updateShader()
-            maybeStartShimmer()
-        }
+        rect.set(bounds)
+        updateShader()
+        maybeStartShimmer()
     }
 
     fun maybeStartShimmer() {
@@ -119,14 +122,17 @@ class ShimmerDrawable : Drawable() {
                 dx = offset(-translateWidth, translateWidth, animatedValue)
                 dy = 0F
             }
+
             Shimmer.Direction.RIGHT_TO_LEFT -> {
                 dx = offset(translateWidth, -translateWidth, animatedValue)
                 dy = 0f
             }
+
             Shimmer.Direction.TOP_TO_BOTTOM -> {
                 dx = 0F
                 dy = offset(-translateHeight, translateHeight, animatedValue)
             }
+
             Shimmer.Direction.BOTTOM_TO_TOP -> {
                 dx = 0F
                 dy = offset(translateHeight, -translateHeight, animatedValue)
@@ -208,17 +214,21 @@ class ShimmerDrawable : Drawable() {
                     endY?.toFloat() ?: 0F,
                     shimmer?.colors ?: intArrayOf(),
                     shimmer?.positions ?: floatArrayOf(),
-                    Shader.TileMode.CLAMP)
+                    Shader.TileMode.CLAMP
+                )
             }
+
             Shimmer.Shape.RADIAL -> {
                 val radius = ((width
                     ?: 0).coerceAtLeast(height ?: 0) / sqrt(2.0))
-                shader = RadialGradient(width?.div(2F) ?: 0F,
+                shader = RadialGradient(
+                    width?.div(2F) ?: 0F,
                     height?.div(2F) ?: 0F,
                     radius.toFloat(),
                     shimmer?.colors ?: intArrayOf(),
                     shimmer?.positions ?: floatArrayOf(),
-                    Shader.TileMode.CLAMP)
+                    Shader.TileMode.CLAMP
+                )
             }
         }
         shimmerPaint.shader = shader

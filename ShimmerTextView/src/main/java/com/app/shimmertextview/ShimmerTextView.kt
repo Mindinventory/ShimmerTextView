@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.FloatRange
-import androidx.annotation.Nullable
 import androidx.annotation.Px
 import androidx.appcompat.widget.AppCompatTextView
 
@@ -38,7 +37,7 @@ class ShimmerTextView : AppCompatTextView {
         init(context, attrs)
     }
 
-    private fun init(context: Context?, @Nullable attrs: AttributeSet?) {
+    private fun init(context: Context?, attrs: AttributeSet?) {
         setWillNotDraw(false)
         shimmerDrawable.callback = this
 
@@ -53,7 +52,8 @@ class ShimmerTextView : AppCompatTextView {
             shimmerBuilder =
                 if (typedArray?.hasValue(R.styleable.ShimmerTextView_shimmer_colored) == true && typedArray.getBoolean(
                         R.styleable.ShimmerTextView_shimmer_colored,
-                        false)
+                        false
+                    )
                 ) Shimmer.ColorHighlightBuilder() else Shimmer.AlphaHighlightBuilder()
             typedArray?.let {
                 setShimmer(shimmerBuilder?.consumeAttributes(it)?.build())
@@ -63,7 +63,7 @@ class ShimmerTextView : AppCompatTextView {
         }
     }
 
-    private fun setShimmer(@Nullable shimmer: Shimmer?): ShimmerTextView {
+    private fun setShimmer(shimmer: Shimmer?): ShimmerTextView {
         shimmer?.let {
             shimmerDrawable.setShimmer(it)
 
@@ -90,7 +90,7 @@ class ShimmerTextView : AppCompatTextView {
         shimmerDrawable.stopShimmer()
     }
 
-    fun isShimmerStarted(): Boolean {
+    private fun isShimmerStarted(): Boolean {
         return shimmerDrawable.isShimmerStarted()
     }
 
@@ -148,10 +148,10 @@ class ShimmerTextView : AppCompatTextView {
         stopShimmer()
     }
 
-    override fun dispatchDraw(canvas: Canvas?) {
+    override fun dispatchDraw(canvas: Canvas) {
         super.dispatchDraw(canvas)
         if (showShimmer) {
-            canvas?.let { shimmerDrawable.draw(it) }
+            shimmerDrawable.draw(canvas)
         }
     }
 
