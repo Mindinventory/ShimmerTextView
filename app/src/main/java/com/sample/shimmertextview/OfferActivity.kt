@@ -1,4 +1,4 @@
-package com.app.shimmertextview
+package com.sample.shimmertextview
 
 import android.app.Activity
 import android.graphics.Color
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.app.shimmertextview.R
+import com.app.shimmertextview.ShimmerTextView
 
 class OfferActivity : AppCompatActivity() {
 

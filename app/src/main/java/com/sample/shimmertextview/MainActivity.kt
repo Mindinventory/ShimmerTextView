@@ -1,4 +1,4 @@
-package com.app.shimmertextview
+package com.sample.shimmertextview
 
 import android.app.Activity
 import android.content.Intent
@@ -9,6 +9,9 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
+import com.app.shimmertextview.R
+import com.app.shimmertextview.Shimmer
+import com.app.shimmertextview.ShimmerTextView
 
 
 class MainActivity : AppCompatActivity() {
