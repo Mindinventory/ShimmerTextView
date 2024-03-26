@@ -22,7 +22,7 @@ local.properties
 /app/build
 /app/.idea
 gradlew.bat
-/app/gradle
+/app/gradlez
 /app/local.properties
 misc.xml
 /buildSrc/build
