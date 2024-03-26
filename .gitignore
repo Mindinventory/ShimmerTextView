@@ -22,7 +22,6 @@ local.properties
 /app/build
 /app/.idea
 gradlew.bat
-gradlew
 /app/gradle
 /app/local.properties
 misc.xml
