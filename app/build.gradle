@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    namespace = "com.app.shimmertextview"
+    namespace = "com.sample.shimmertextview"
 
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.app.shimmertextview"
+        applicationId = "com.sample.shimmertextview"
         minSdk = 23
         targetSdk = 34
         versionCode = 1
